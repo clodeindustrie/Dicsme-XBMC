@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<window>
+	<defaultcontrol>105</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<animation effect="slide" time="500">WindowOpen</animation>
+	<animation effect="slide" time="500">WindowClose</animation>
+	<controls>
+		<!-- STATUS -->
+		<control type="group">
+			<posx>924</posx>
+			<posy>0</posy>
+			<width>100</width>
+			<height>30</height>
+			
+			<control type="label" id="105">
+				<description>textarea</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>30</height>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<align>center</align>
+				<wrapmultiline>false</wrapmultiline>
+				<label>Status...</label>
+				<scroll>true</scroll>
+			</control>
+		</control>
+		
+		<!-- ADDING FORM -->
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>600</width>
+			<height>100</height>
+
+			<control type="label" id="100">
+				<description>textarea</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>250</width>
+				<height>30</height>
+				<font>font15</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<align>center</align>
+				<wrapmultiline>false</wrapmultiline>
+				<label>UID</label>
+			</control>
+			<control type="label" id="101">
+				<description>textarea</description>
+				<posx>260</posx>
+				<posy>0</posy>
+				<width>250</width>
+				<height>30</height>
+				<font>font15</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<align>center</align>
+				<wrapmultiline>false</wrapmultiline>
+				<label>Identifier</label>
+			</control>
+			<control type="button" id="102">
+				<description>My second button control</description>
+				<posx>520</posx>
+				<posy>0</posy>
+				<width>50</width>
+				<height>30</height>
+				<visible>true</visible>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+<!-- <texturefocus>myfocustexture.png</texturefocus>
+			<texturenofocus>mynormaltexture.png</texturenofocus> -->
+				<label>Add</label>
+				<font>font15</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<disabledcolor>80FFFFFF</disabledcolor>
+				<align/>
+				<aligny/>
+				<textoffsetx/>
+				<textoffsety/>
+				<pulseonselect/>
+				<onclick/>
+				<onfocus></onfocus>
+				<onup>2</onup>
+				<ondown>3</ondown>
+				<onleft>1</onleft>
+				<onright>1</onright>
+			</control>
+		</control>
+		
+		<!-- DELETE FORM -->
+		<control type="group">
+			<posx>0</posx>
+			<posy>100</posy>
+			<width>600</width>
+			<height>100</height>
+
+			<control type="label" id="103">
+				<description>textarea</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>250</width>
+				<height>30</height>
+				<font>font15</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<align>center</align>
+				<wrapmultiline>false</wrapmultiline>
+				<label>identifier to delete</label>
+			</control>
+			<control type="button" id="104">
+				<description>My first button control</description>
+				<posx>260</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>30</height>
+				<visible>true</visible>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+<!-- <texturefocus>myfocustexture.png</texturefocus>
+			<texturenofocus>mynormaltexture.png</texturenofocus> -->
+				<label>Delete</label>
+				<font>font15</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<disabledcolor>80FFFFFF</disabledcolor>
+				<align/>
+				<aligny/>
+				<textoffsetx/>
+				<textoffsety/>
+				<pulseonselect/>
+				<onclick/>
+				<onfocus></onfocus>
+				<onup>2</onup>
+				<ondown>3</ondown>
+				<onleft>1</onleft>
+				<onright>1</onright>
+			</control>
+		</control>
+<!-- ** Required ** Do not change <id> or <type> -->
+		<control type="list" id="120">
+			<posx>0</posx>
+			<posy>200</posy>
+			<width>1040</width>
+			<height>380</height>
+			<onleft>120</onleft>
+			<onright>120</onright>
+			<onup>110</onup>
+			<ondown>110</ondown>
+			<viewtype label="535">list</viewtype>
+			<pagecontrol>121</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<itemlayout height="38">
+				<control type="label">
+					<posx>10</posx>
+					<posy>0</posy>
+					<width>315</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.label</info>
+				</control>
+				<control type="label">
+					<posx>330</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.label2</info>
+				</control>
+			</itemlayout>
+			<focusedlayout height="38">
+				<control type="label">
+					<posx>10</posx>
+					<posy>0</posy>
+					<width>315</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.label</info>
+				</control>
+				<control type="label">
+					<posx>330</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.label2</info>
+				</control>
+				<control type="button" >
+					<description>My third button control</description>
+					<posx>640</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>30</height>
+					<visible>true</visible>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+	<!-- <texturefocus>myfocustexture.png</texturefocus>
+				<texturenofocus>mynormaltexture.png</texturenofocus> -->
+					<label>Delete</label>
+					<font>font15</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<disabledcolor>80FFFFFF</disabledcolor>
+					<align>center</align>
+					<aligny/>
+					<textoffsetx/>
+					<textoffsety/>
+					<pulseonselect/>
+					<onclick/>
+					<onfocus></onfocus>
+					<onup>2</onup>
+					<ondown>3</ondown>
+					<onleft>1</onleft>
+					<onright>1</onright>
+				</control>				
+			</focusedlayout>
+		</control>
+		<control type="group">
+			<posx>1055</posx>
+			<posy>126</posy>
+			<control type="scrollbar" id="121">
+				<description>scroll bar indicator for lists</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>12</width>
+				<height>380</height>
+				<texturesliderbackground border="6">default-scroll_back.png</texturesliderbackground>
+				<texturesliderbar border="6">default-scroll_mid.png</texturesliderbar>
+				<texturesliderbarfocus border="6">default-scroll_mid.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<visible>Control.IsVisible(120)</visible>
+			</control>
+		</control>
+	</controls>
+</window>
