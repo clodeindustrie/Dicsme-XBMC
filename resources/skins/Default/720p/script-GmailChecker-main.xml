@@ -140,6 +140,7 @@
 				<onright>1</onright>
 			</control>
 		</control>
+
 <!-- ** Required ** Do not change <id> or <type> -->
 		<control type="list" id="120">
 			<posx>0</posx>

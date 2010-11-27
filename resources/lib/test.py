@@ -7,12 +7,12 @@ BASE_RESOURCE_PATH = os.getcwd()
 
 sys.path.append (BASE_RESOURCE_PATH)
 
-BASEURL="http://127.0.0.1:4567"
+BASEURL="http://192.168.0.17:4567"
 
 # Let's instanciate our Discme link object
 dr = dicsmeremote.DicsmeRemote(BASEURL)
 
-#print dr.addAlbum( "toto" , "tata" )
+print dr.addAlbum( "toto" , "tata" )
 
 # Let's get our albums
 enum = dr.getAlbumList()

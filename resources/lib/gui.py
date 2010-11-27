@@ -20,13 +20,12 @@ ID2=103
 DEL=104
 BUT=120
 LIST=120
-BASEURL="http://127.0.0.1:4567"
+BASEURL="http://192.168.0.17:4567"
 
 class GUI( xbmcgui.WindowXML ):
     
     def __init__( self, *args, **kwargs ):
-	  
-	  pass
+	  self.dr = dicsmeremote.DicsmeRemote( BASEURL )
     
     def onInit( self ):
 	  self.setup_all()
@@ -34,37 +33,53 @@ class GUI( xbmcgui.WindowXML ):
     def setup_all( self ):
 		try:
 			self.getControl( STATUS ).setLabel( "C'est parti...")
-			
+			print "c'est parti"
+					
 			# Let's instanciate our Discme link object
-			dr = dicsmeremote.DicsmeRemote( BASEURL )
+			#dr = dicsmeremote.DicsmeRemote( BASEURL )
 			
 			# Let's get our albums
-			enum = dr.getAlbumList()
+			enum = self.dr.getAlbumList()
 			
 			for i, album in enumerate( enum ):
 
-				listitem = xbmcgui.ListItem( label2=album['UUID'], label=album['identifier'])
+				listitem = xbmcgui.ListItem( label2=album['UID'], label=album['identifier'])
 
 				self.getControl( LIST ).addItem( listitem )
 
 				self.setFocus( self.getControl( LIST ) )
+
 		except:
-			error = "Erreur"
+			error = sys.exc_info()[0]
+			print error
 			self.getControl( STATUS ).setLabel( error )
 
     def message(self, message):
 		dialog = xbmcgui.Dialog()
-		dialog.ok(" My message title", message)    
+		return dialog.ok(" Message ", message)    
+
+    def question(self, message):
+		dialog = xbmcgui.Dialog()
+		return dialog.yesno(" ?", message)
     
     def onClick( self, controlId ):
 		print "click"+str(controlId)
-		
 		# Detect the source of the click
 		if ( controlId == BUT ):
-			self.message(self,"are you sure?")
-			print self.getControl( controlId ).getSelectedItem().getLabel()
-		elif ( controlId == ADD):
-			self.getList()
+			if self.question("Etes vous sure ?"):
+				if self.dr.deleteAlbum( self.getControl( controlId ).getSelectedItem().getLabel() ):
+					self.message( self.getControl( controlId ).getSelectedItem().getLabel() + " a été effacé" )
+					self.getControl( LIST ).removeItem( self.getControl( controlId ).getSelectedPosition() )
+		elif ( controlId == ADD ):
+			if self.question("are you sure?"):
+				self.message("ajoute")
+		elif ( controlId == UID ):
+			keyboard = xbmc.Keyboard('mytext')
+			keyboard.doModal()
+			if (keyboard.isConfirmed()):
+				self.getControl( UID ).setLabel(keyboard.getText())
+			else:
+				self.getControl( UID ).setLabel('user canceled')
 
     def onFocus( self, controlId ):
 		self.controlId = controlId
